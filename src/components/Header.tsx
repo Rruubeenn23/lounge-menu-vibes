@@ -1,8 +1,9 @@
 import { Sparkles } from "lucide-react";
+import logoImage from "@/assets/lunalounge-logo.png";
 
 const Header = () => {
   return (
-    <header className="relative min-h-[50vh] flex flex-col items-center justify-center px-6 py-16 overflow-hidden">
+    <header className="relative min-h-[55vh] flex flex-col items-center justify-center px-6 py-16 overflow-hidden">
       {/* Background gradient */}
       <div 
         className="absolute inset-0 -z-10"
@@ -15,6 +16,15 @@ const Header = () => {
       
       {/* Content */}
       <div className="text-center space-y-6 animate-fade-up">
+        {/* Logo */}
+        <div className="flex justify-center mb-4">
+          <img 
+            src={logoImage} 
+            alt="LunaLounge - Luna, gato y shisha" 
+            className="w-32 h-32 sm:w-40 sm:h-40 object-contain animate-float"
+          />
+        </div>
+        
         <div className="flex items-center justify-center gap-2 text-gold/80">
           <Sparkles className="w-4 h-4" />
           <span className="text-sm font-medium tracking-[0.3em] uppercase">Est. 2024</span>
@@ -22,8 +32,8 @@ const Header = () => {
         </div>
         
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight">
-          <span className="text-gradient-gold">Velvet</span>
-          <span className="text-foreground"> Lounge</span>
+          <span className="text-gradient-gold">Luna</span>
+          <span className="text-foreground">Lounge</span>
         </h1>
         
         <p className="text-muted-foreground text-lg sm:text-xl tracking-wide">

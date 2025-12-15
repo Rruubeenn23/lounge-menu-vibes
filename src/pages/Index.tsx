@@ -76,7 +76,7 @@ const Index = () => {
           subtitle="Creaciones exclusivas de nuestros maestros"
         >
           <MenuItem 
-            name="Velvet Night"
+            name="Luna Night"
             description="Nuestra firma: uva negra, menta suave y un toque misterioso"
             price="25€"
             tag="Signature"
@@ -126,9 +126,9 @@ const Index = () => {
                 Especiales del Lounge
               </h3>
               <MenuItem 
-                name="Velvet Lemonade" 
+                name="Luna Lemonade" 
                 description="Limonada con lavanda y miel" 
-                price="5€" 
+                price="5€"
               />
               <MenuItem 
                 name="Mint Mojito" 
