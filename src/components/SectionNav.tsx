@@ -47,7 +47,7 @@ const SectionNav = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const offset = 40;
       const elementPosition = element.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
@@ -57,7 +57,7 @@ const SectionNav = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/30">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-4 border-border/30 border-red">
       <div className="container py-3">
         <div className="flex gap-2 overflow-x-auto scrollbar-hide justify-center">
           {navItems.map((item) => (
