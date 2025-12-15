@@ -3,6 +3,13 @@ import MenuSection from "@/components/MenuSection";
 import MenuItem from "@/components/MenuItem";
 import FlavorGrid from "@/components/FlavorGrid";
 import Footer from "@/components/Footer";
+import {
+  cachimbasClasicas,
+  cachimbasPremium,
+  mezclasCasa,
+  bebidasSinAlcohol,
+  bebidasEspeciales,
+} from "@/data/menuData";
 
 const Index = () => {
   return (
@@ -12,54 +19,34 @@ const Index = () => {
       <main className="container">
         {/* Cachimbas Clásicas */}
         <MenuSection 
-          title="Cachimbas Clásicas" 
-          subtitle="Selección tradicional de sabores puros"
+          title={cachimbasClasicas.title} 
+          subtitle={cachimbasClasicas.subtitle}
         >
-          <MenuItem 
-            name="Individual"
-            description="Un sabor a elegir de nuestra selección"
-            price="15€"
-          />
-          <MenuItem 
-            name="Dúo"
-            description="Mezcla de dos sabores a tu gusto"
-            price="17€"
-          />
-          <MenuItem 
-            name="Trío"
-            description="Combinación de tres sabores"
-            price="19€"
-          />
+          {cachimbasClasicas.items.map((item) => (
+            <MenuItem 
+              key={item.name}
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              tag={item.tag}
+            />
+          ))}
         </MenuSection>
 
         {/* Cachimbas Premium */}
         <MenuSection 
-          title="Cachimbas Premium" 
-          subtitle="Experiencias exclusivas con tabaco de alta gama"
+          title={cachimbasPremium.title} 
+          subtitle={cachimbasPremium.subtitle}
         >
-          <MenuItem 
-            name="Frozen Mist"
-            description="Menta glacial con eucalipto y hielo"
-            price="22€"
-            tag="Favorito"
-          />
-          <MenuItem 
-            name="Tropical Sunset"
-            description="Mango, maracuyá y un toque de coco"
-            price="22€"
-          />
-          <MenuItem 
-            name="Berry Dreams"
-            description="Arándanos, frambuesa y mora silvestre"
-            price="22€"
-            tag="Nuevo"
-          />
-          <MenuItem 
-            name="Golden Rose"
-            description="Pétalos de rosa con miel y vainilla"
-            price="24€"
-            tag="Premium"
-          />
+          {cachimbasPremium.items.map((item) => (
+            <MenuItem 
+              key={item.name}
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              tag={item.tag}
+            />
+          ))}
         </MenuSection>
 
         {/* Sabores Disponibles */}
@@ -72,30 +59,18 @@ const Index = () => {
 
         {/* Mezclas Especiales */}
         <MenuSection 
-          title="Mezclas de la Casa" 
-          subtitle="Creaciones exclusivas de nuestros maestros"
+          title={mezclasCasa.title} 
+          subtitle={mezclasCasa.subtitle}
         >
-          <MenuItem 
-            name="Luna Night"
-            description="Nuestra firma: uva negra, menta suave y un toque misterioso"
-            price="25€"
-            tag="Signature"
-          />
-          <MenuItem 
-            name="Arabian Nights"
-            description="Mezcla tradicional de frutas del desierto con especias"
-            price="24€"
-          />
-          <MenuItem 
-            name="Purple Haze"
-            description="Arándanos, lavanda y un susurro de limón"
-            price="24€"
-          />
-          <MenuItem 
-            name="Summer Breeze"
-            description="Sandía fresca, pepino y menta"
-            price="23€"
-          />
+          {mezclasCasa.items.map((item) => (
+            <MenuItem 
+              key={item.name}
+              name={item.name}
+              description={item.description}
+              price={item.price}
+              tag={item.tag}
+            />
+          ))}
         </MenuSection>
 
         {/* Separator */}
@@ -112,40 +87,32 @@ const Index = () => {
             {/* Sin Alcohol */}
             <div className="space-y-2">
               <h3 className="text-gold text-sm font-medium uppercase tracking-wider mb-4 px-4">
-                Sin Alcohol
+                {bebidasSinAlcohol.title}
               </h3>
-              <MenuItem name="Agua mineral" price="2€" />
-              <MenuItem name="Refresco" description="Coca-Cola, Fanta, Sprite" price="3€" />
-              <MenuItem name="Zumo natural" description="Naranja, manzana o piña" price="4€" />
-              <MenuItem name="Té frío" description="Melocotón o limón" price="3.50€" />
+              {bebidasSinAlcohol.items.map((item) => (
+                <MenuItem 
+                  key={item.name}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                />
+              ))}
             </div>
 
             {/* Especiales */}
             <div className="space-y-2">
               <h3 className="text-gold text-sm font-medium uppercase tracking-wider mb-4 px-4">
-                Especiales del Lounge
+                {bebidasEspeciales.title}
               </h3>
-              <MenuItem 
-                name="Luna Lemonade" 
-                description="Limonada con lavanda y miel" 
-                price="5€"
-              />
-              <MenuItem 
-                name="Mint Mojito" 
-                description="Mocktail de menta, lima y azúcar de caña" 
-                price="6€" 
-              />
-              <MenuItem 
-                name="Berry Sensation" 
-                description="Frutos rojos, naranja y jengibre" 
-                price="6€" 
-              />
-              <MenuItem 
-                name="Golden Hour" 
-                description="Mango, maracuyá y agua de coco" 
-                price="6€" 
-                tag="Favorito"
-              />
+              {bebidasEspeciales.items.map((item) => (
+                <MenuItem 
+                  key={item.name}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                  tag={item.tag}
+                />
+              ))}
             </div>
           </div>
         </MenuSection>
