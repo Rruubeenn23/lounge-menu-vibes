@@ -62,7 +62,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-border/30 text-center">
           <p className="text-muted-foreground text-xs">
-            © 2024 Velvet Lounge. Todos los derechos reservados.
+            © 2024 LunaLounge. Todos los derechos reservados.
           </p>
         </div>
       </div>
