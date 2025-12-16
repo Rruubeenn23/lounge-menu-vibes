@@ -108,7 +108,7 @@ const SectionNav = () => {
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               )}
             >
-              Más
+              {isMoreActive ? moreItems.find(item => item.id === activeSection)?.label : "Más"}
               <ChevronDown className={cn("w-4 h-4 transition-transform", showMore && "rotate-180")} />
             </button>
 
