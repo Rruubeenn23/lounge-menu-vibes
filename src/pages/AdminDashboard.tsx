@@ -5,7 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogOut, LayoutDashboard, Package, FolderTree, Settings } from "lucide-react";
 import ProductsManager from "@/components/admin/ProductsManager";
 import CategoriesManager from "@/components/admin/CategoriesManager";
-import ComandasManager from "@/components/admin/ComandasManager";
 import DashboardStats from "@/components/admin/DashboardStats";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
@@ -43,15 +42,13 @@ const AdminDashboard = () => {
                         </p>
                     </div>
                     <div className="flex items-center gap-4">
-                        {import.meta.env.DEV && (
-                            <Link
-                                to="/"
-                                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors text-sm"
-                            >
-                                <Settings className="h-4 w-4" />
-                                <span className="hidden sm:inline">Usuario</span>
-                            </Link>
-                        )}
+                        <Link
+                            to="/"
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors text-sm"
+                        >
+                            <Settings className="h-4 w-4" />
+                            <span className="hidden sm:inline">Usuario</span>
+                        </Link>
                         <Button variant="outline" onClick={handleSignOut}>
                             <LogOut className="mr-2 h-4 w-4" />
                             Cerrar sesión
@@ -65,7 +62,7 @@ const AdminDashboard = () => {
             {/* Main Content */}
             <main className="container py-8">
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                    <TabsList className="grid w-full max-w-md grid-cols-4">
+                    <TabsList className="grid w-full max-w-md grid-cols-3">
                         <TabsTrigger value="dashboard">
                             <LayoutDashboard className="mr-2 h-4 w-4" />
                             Dashboard
@@ -77,10 +74,6 @@ const AdminDashboard = () => {
                         <TabsTrigger value="categories">
                             <FolderTree className="mr-2 h-4 w-4" />
                             Categorías
-                        </TabsTrigger>
-                        <TabsTrigger value="comandas">
-                            <FolderTree className="mr-2 h-4 w-4" />
-                            Comandas
                         </TabsTrigger>
                     </TabsList>
 
@@ -94,9 +87,6 @@ const AdminDashboard = () => {
 
                     <TabsContent value="categories" className="mt-6">
                         <CategoriesManager />
-                    </TabsContent>
-                    <TabsContent value="comandas" className="mt-6">
-                        <ComandasManager />
                     </TabsContent>
                 </Tabs>
             </main>
