@@ -54,7 +54,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-              {/* Link al admin (solo visible en desarrollo) */}
+        {/* Link al admin (solo visible en desarrollo) */}
         {import.meta.env.DEV && (
           <Link
             to="/admin/login"
