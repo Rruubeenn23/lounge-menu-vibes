@@ -208,6 +208,35 @@ export interface Database {
           updated_by?: string | null
         }
       }
+      orders: {
+      Row: {
+        id: string
+        table_id: string
+        items: Json
+        total: number
+        status: 'open' | 'paid'
+        created_at: string
+        closed_at: string | null
+      }
+      Insert: {
+        id?: string
+        table_id: string
+        items: Json
+        total?: number
+        status?: 'open' | 'paid'
+        created_at?: string
+        closed_at?: string | null
+      }
+      Update: {
+        id?: string
+        table_id?: string
+        items?: Json
+        total?: number
+        status?: 'open' | 'paid'
+        closed_at?: string | null
+      }
+    }
+
     }
     Views: {
       products_full: {

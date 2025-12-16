@@ -1,4 +1,5 @@
 interface MenuItemProps {
+  onClick?: () => void;
   name: string;
   description?: string;
   price: string;
@@ -6,15 +7,15 @@ interface MenuItemProps {
   imageUrl?: string;
 }
 
-const MenuItem = ({ name, description, price, tag, imageUrl }: MenuItemProps) => {
+const MenuItem = ({ onClick, name, description, price, tag, imageUrl }: MenuItemProps) => {
   return (
-    <div className="group flex items-start justify-between gap-4 py-4 px-4 rounded-lg transition-all duration-300 hover:bg-muted/30">
+    <div onClick={onClick} className="group cursor-pointer flex items-start justify-between gap-4 py-4 px-4 rounded-lg transition-all duration-300 hover:bg-muted/30 items-center">
       {imageUrl && (
-        <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
+        <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
           <img 
             src={imageUrl} 
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
           />
         </div>
       )}
