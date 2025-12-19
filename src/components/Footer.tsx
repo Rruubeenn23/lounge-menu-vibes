@@ -45,9 +45,8 @@ const Footer = () => {
 
   // Horarios hardcodeados
   const hours = [
-    { days: "Lunes - Jueves", time: "18:00 - 02:00" },
-    { days: "Viernes - Sábado", time: "18:00 - 04:00" },
-    { days: "Domingo", time: "17:00 - 01:00" },
+    { days: "Viernes - Sábado", time: "20:00 - 03:30" },
+    { days: "Domingo", time: "12:00 - 16:00" },
   ];
 
   return (
