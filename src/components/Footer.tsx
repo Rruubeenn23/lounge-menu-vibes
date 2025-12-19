@@ -51,7 +51,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border/50 bg-muted/20 mt-16">
-      <div className="container py-12 mt-4">
+      <div className="container py-12 mt-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Location */}
           <div className="space-y-3">
