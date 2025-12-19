@@ -13,18 +13,15 @@ const SectionNav = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [showMore, setShowMore] = useState(false);
   const [navItems, setNavItems] = useState<NavItem[]>([]);
-
+  
   // Generar items de navegación desde las categorías
   useEffect(() => {
-    if (categories) {
-      const items: NavItem[] = [
-        { id: "cachimbas", label: "Cachimbas" },
-        { id: "para-picar", label: "Para Picar" },
-        { id: "bebidas", label: "Bebidas" },
-        { id: "copas", label: "Copas" },
-        { id: "chupitos", label: "Chupitos" },
-        { id: "especiales", label: "Especiales" },
-      ];
+    if (categories && categories.length > 0) {
+      // Generar items dinámicamente desde las categorías activas
+      const items: NavItem[] = categories.map(cat => ({
+        id: cat.slug,
+        label: cat.name
+      }));
       setNavItems(items);
       if (!activeSection && items.length > 0) {
         setActiveSection(items[0].id);
